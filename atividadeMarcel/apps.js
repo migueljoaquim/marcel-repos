@@ -55,21 +55,20 @@ entradaDados.question('Digite o  nome do aluno(a):\n', function(aluno) {
 
                             entradaDados.question('Coloque a nota 1:\n', function(nota1) {
 
-                                let valor1 = nota1
+                                let valor1 = Number(nota1)
 
 
                                 entradaDados.question('Coloque a nota 2:\n', function(nota2) {
 
-                                    let valor2 = nota2
+                                    let valor2 = Number(nota2)
 
                                     entradaDados.question('Coloque a nota 3:\n', function(nota3) {
 
-                                        let valor3 = nota3
+                                        let valor3 = Number(nota3)
 
                                         entradaDados.question('Coloque a nota 4:\n', function(nota4) {
 
-                                            let valor4 = nota4
-
+                                            let valor4 = Number(nota4)
                                             if (valor1 == '' || valor2 == '' || valor3 == '' || valor4 == '') {
 
                                                 console.log('PRENCHER TODOS OS CAMPOS DE DADOS POR FAVOR')
@@ -95,14 +94,30 @@ entradaDados.question('Digite o  nome do aluno(a):\n', function(aluno) {
 
                                                 console.log('ERRO:vocé é burro colocou o bagulho errado por favor arrumar o valor')
                                                 entradaDados.close()
+                                            
+
                                             } else {
 
 
 
+                                     
+                                                resultadoFinal = resultado.calculoDeMedias(valor1, valor2, valor3, valor4)
 
-                                                resultado(valor1, valor2, valor3, valor4);
+                                                // (valor1, valor2, valor3, valor4);
+                                                // console.log(`Sua nota é = ${resultadoFinal}`)
+                                                if(resultadoFinal >=50 && resultadoFinal < 70) {
+                                                     entradaDados.question('Coloque a nota do resultado do exame:\n', function (exameNota){
+                                                        let notaExame = Number(exameNota)
+                                                        let resultadoExame = (notaExame + resultadoFinal) / 2
+                                                        console.log(resultadoExame)
+                                                        if(resultadoExame > 60){
+                                                            console.log('aprovado')
+                                                        }else{
+                                                            console.log('reprovado')
+                                                        }
+                                                     })//teste
+                                                }
 
-                                                console.log(resultado)
 
 
                                             }
