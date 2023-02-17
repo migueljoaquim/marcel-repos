@@ -68,54 +68,85 @@ entradaDados.question('Digite o  nome do aluno(a):\n', function(aluno) {
 
                                         entradaDados.question('Coloque a nota 4:\n', function(nota4) {
 
+
+
+
                                             let valor4 = Number(nota4)
+
+
                                             if (valor1 == '' || valor2 == '' || valor3 == '' || valor4 == '') {
 
                                                 console.log('PRENCHER TODOS OS CAMPOS DE DADOS POR FAVOR')
                                                 entradaDados.close()
                                             }
+                                            if (isNaN(valor1) || isNaN(valor2) || isNaN(valor3) || isNaN(valor4)) {
+                                                console.log('Por favor digitar somente numeros')
+                                                entradaDados.close()
+
+
+                                            }
 
                                             if (valor1 < 0 || valor1 >= 100) {
 
-                                                console.log('ERRO:vocé é burro colocou o bagulho errado por favor arrumar o valor')
+                                                console.log('ERRO: por favor arrumar o valor')
                                                 entradaDados.close()
 
                                             } else if (valor2 < 0 || valor2 >= 100) {
 
-                                                console.log('ERRO:vocé é burro colocou o bagulho errado por favor arrumar o valor')
+                                                console.log('ERRO: por favor arrumar o valor')
                                                 entradaDados.close()
 
                                             } else if (valor3 < 0 || valor3 >= 100) {
 
-                                                console.log('ERRO:vocé é burro colocou o bagulho errado por favor arrumar o valor')
+                                                console.log('ERR: por favor arrumar o valor')
                                                 entradaDados.close()
 
                                             } else if (valor4 < 0 || valor4 >= 100) {
 
-                                                console.log('ERRO:vocé é burro colocou o bagulho errado por favor arrumar o valor')
+                                                console.log('ERRO: por favor arrumar o valor')
                                                 entradaDados.close()
-                                            
+
 
                                             } else {
 
+                                                console.log('.....................................................................................')
 
 
-                                     
+
+
                                                 resultadoFinal = resultado.calculoDeMedias(valor1, valor2, valor3, valor4)
 
-                                                // (valor1, valor2, valor3, valor4);
-                                                // console.log(`Sua nota é = ${resultadoFinal}`)
-                                                if(resultadoFinal >=50 && resultadoFinal < 70) {
-                                                     entradaDados.question('Coloque a nota do resultado do exame:\n', function (exameNota){
-                                                        let notaExame = Number(exameNota)
-                                                        let resultadoExame = (notaExame + resultadoFinal) / 2
-                                                        console.log(resultadoExame)
-                                                        if(resultadoExame > 60){
-                                                            console.log('aprovado')
-                                                        }else{
-                                                            console.log('reprovado')
-                                                        }
-                                                     })//teste
+                                                console.log('Nome do Professor:', professor)
+                                                console.log('Sexo do Professor:', sexoProfessor)
+                                                console.log('Nome do Aluno:', aluno)
+                                                console.log('Sexo do Aluno:', sexoAluno)
+                                                console.log('Escolha do curso:', curso)
+                                                console.log('Escolha de Materias', materias)
+                                                console.log('Resultado final', resultadoFinal)
+
+
+
+                                                if (resultadoFinal >= 50 && resultadoFinal < 70) {
+                                                    entradaDados.question('Coloque a nota do resultado do exame:\n', function(exameNota) {
+                                                            let notaExame = Number(exameNota)
+                                                            let resultadoExame = (notaExame + resultadoFinal) / 2
+                                                            console.log(resultadoExame)
+                                                            if (resultadoExame > 60) {
+                                                                console.log('aprovado')
+                                                            } else {
+                                                                console.log('reprovado')
+                                                            }
+                                                            console.log('Nome do Professor:', professor)
+                                                            console.log('Sexo do Professor:', sexoProfessor)
+                                                            console.log('Nome do Aluno:', aluno)
+                                                            console.log('Sexo do Aluno:', sexoAluno)
+                                                            console.log('Escolha do curso:', curso)
+                                                            console.log('Escolha de Materias', materias)
+
+
+
+
+                                                        }) //teste
                                                 }
 
 
