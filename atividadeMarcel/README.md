@@ -1,3 +1,0 @@
-# gerenciamentoDeMedias
-# gerenciamentoDeMedias
-# marcel-repos
